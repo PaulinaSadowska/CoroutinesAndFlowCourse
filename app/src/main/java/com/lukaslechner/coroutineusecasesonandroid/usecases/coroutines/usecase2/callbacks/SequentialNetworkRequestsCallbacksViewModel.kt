@@ -11,8 +11,8 @@ class SequentialNetworkRequestsCallbacksViewModel(
     private val mockApi: CallbackMockApi = mockApi()
 ) : BaseViewModel<UiState>() {
 
-    var call1: Call<List<AndroidVersion>>? = null
-    var call2: Call<VersionFeatures>? = null
+    private var call1: Call<List<AndroidVersion>>? = null
+    private var call2: Call<VersionFeatures>? = null
 
     fun perform2SequentialNetworkRequest() {
         uiState.value = UiState.Loading
