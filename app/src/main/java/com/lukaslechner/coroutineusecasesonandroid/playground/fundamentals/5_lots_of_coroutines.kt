@@ -1,4 +1,4 @@
-package com.lukaslechner.coroutineusecasesonandroid.playground.utils
+package com.lukaslechner.coroutineusecasesonandroid.playground.fundamentals
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

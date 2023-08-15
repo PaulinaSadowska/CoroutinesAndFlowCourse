@@ -1,4 +1,4 @@
-package com.lukaslechner.coroutineusecasesonandroid.playground.utils
+package com.lukaslechner.coroutineusecasesonandroid.playground.fundamentals
 
 import java.lang.Thread.sleep
 import kotlin.concurrent.thread
