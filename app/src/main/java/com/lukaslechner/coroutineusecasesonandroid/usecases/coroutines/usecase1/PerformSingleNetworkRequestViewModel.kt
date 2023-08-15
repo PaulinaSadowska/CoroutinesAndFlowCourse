@@ -9,6 +9,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 class PerformSingleNetworkRequestViewModel(
     private val mockApi: MockApi = mockApi()
@@ -18,8 +19,13 @@ class PerformSingleNetworkRequestViewModel(
         uiState.value = UiState.Loading
 
         viewModelScope.launch {
-            val result = mockApi.getRecentAndroidVersions()
-            uiState.value = UiState.Success(result)
+            try {
+                val result = mockApi.getRecentAndroidVersions()
+                uiState.value = UiState.Success(result)
+            } catch (e: Exception) {
+                uiState.value = UiState.Error("something went wrong :(")
+            }
+
         }
     }
 }
