@@ -18,11 +18,8 @@ class PerformSingleNetworkRequestViewModel(
         uiState.value = UiState.Loading
 
         viewModelScope.launch {
-            val result = withContext(Dispatchers.IO) { mockApi.getRecentAndroidVersions() }
-            withContext(Dispatchers.Main) {
-                uiState.value = UiState.Success(result)
-            }
-
+            val result = mockApi.getRecentAndroidVersions()
+            uiState.value = UiState.Success(result)
         }
     }
 }
